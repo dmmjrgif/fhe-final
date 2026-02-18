@@ -7,7 +7,7 @@ import os
 
 # Import your FHE Library
 # Ensure 'example_accelerated.py' and 'custom_fhe' are in the same folder
-from example_accelerated import BFVSchemeAccelerated
+from complete_fhe_package.example_accelerated import BFVSchemeAccelerated
 
 app = FastAPI()
 
