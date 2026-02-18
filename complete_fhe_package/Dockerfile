@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy ALL files from your GitHub repo into the /app folder
-COPY . /app
+COPY .. /app
 
 # Install Python Dependencies
 RUN pip install --no-cache-dir fastapi uvicorn python-multipart requests numpy psutil streamlit
