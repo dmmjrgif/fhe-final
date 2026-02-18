@@ -15,18 +15,17 @@ WORKDIR /app
 # Copy files
 COPY . /app
 
-# Set Python Path
+# Set Python Path so it finds your modules
 ENV PYTHONPATH="/app"
 
 # Install Python Dependencies
 RUN pip install --no-cache-dir fastapi uvicorn python-multipart requests numpy psutil streamlit
 
 # ⚡ COMPILE C++ EXTENSION ⚡
+# This relies on cmake being installed above
 RUN python setup_cpp.py build_ext --inplace
 
 EXPOSE 8000
 
 # Start the Server
 CMD ["uvicorn", "server_api:app", "--host", "0.0.0.0", "--port", "8000"]
-
-# Fix build
