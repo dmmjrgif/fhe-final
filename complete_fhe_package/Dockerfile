@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir fastapi uvicorn python-multipart requests numpy p
 
 # ⚡ COMPILE C++ EXTENSION ⚡
 # We use 'ls' first just to see where we are (helpful for debugging logs)
-RUN ls -la && python setup.py build_ext --inplace
+RUN python setup_cpp.py build_ext --inplace
 
 # Expose API Port
 EXPOSE 8000
