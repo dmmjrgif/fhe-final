@@ -2,11 +2,13 @@
 FROM python:3.9-slim
 
 # Install C++ Compiler, Build Tools AND CMake
+# Install C++ Compiler, Build Tools AND CMake
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     make \
     cmake \
+    pybind11-dev \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
