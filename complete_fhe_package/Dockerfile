@@ -19,7 +19,7 @@ COPY . /app
 ENV PYTHONPATH="/app"
 
 # Install Python Dependencies
-RUN pip install --no-cache-dir fastapi uvicorn python-multipart requests numpy psutil streamlit
+RUN pip install --no-cache-dir fastapi uvicorn python-multipart requests numpy psutil streamlit pybind11
 
 # ⚡ COMPILE C++ EXTENSION ⚡
 # This relies on cmake being installed above
